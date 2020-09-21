@@ -6,9 +6,6 @@ import Output from "./Output";
 import { Store } from "../context";
 
 function Editor() {
-  // const [html, setHtml] = useState("");
-  // const [css, setCss] = useState("");
-  // const [js, setJs] = useState("");
   const [code, setCode] = useState("");
   const [store, dispatch] = Store();
 
