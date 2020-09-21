@@ -12,16 +12,16 @@ export const reducer = (state, action) => {
         ...state,
         html: action.html,
       };
+
     case "css":
       localStorage.setItem("css", action.css);
-
       return {
         ...state,
         css: action.css,
       };
+
     case "js":
       localStorage.setItem("js", action.js);
-
       return {
         ...state,
         js: action.js,
