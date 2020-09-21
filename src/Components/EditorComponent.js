@@ -1,7 +1,7 @@
 import React from "react";
 import Close from "../Assets/resize-arrows-svgrepo-com.svg";
 
-function EditorComponent({ title, id, onChange }) {
+function EditorComponent({ title, id, onChange, value }) {
   const resize = (e) => {
     var editor = document.getElementById(id);
     editor.classList.toggle("shrinked");
@@ -25,6 +25,7 @@ function EditorComponent({ title, id, onChange }) {
         className="editor"
         onChange={onChange}
         id={id}
+        value={value}
       ></textarea>
     </div>
   );
