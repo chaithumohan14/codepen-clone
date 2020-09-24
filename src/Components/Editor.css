@@ -12,6 +12,12 @@ iframe {
   width: 100%;
 }
 
+.editor__container {
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+}
+
 .editors {
   display: flex;
   align-items: center;
@@ -22,23 +28,28 @@ iframe {
 }
 
 .editors .editor {
-  height: 45vh;
+  height: 100%;
   width: 28vw;
-  border: 1px solid#fff;
-  box-shadow: 0px 1px 20px 0px rgba(255, 255, 255, 0.3);
-  font-family: "Fira Code", Helvetica, sans-serif;
-  font-size: 14px;
+  font-family: "Fira Code", Helvetica, sans-serif !important;
+  font-size: 15px;
   padding: 10px;
   resize: none;
-  background-color: #1d1e22;
+  /* background-color: #1d1e22; */
+  object-fit: contain;
   border-radius: 10px;
   color: #fff;
   outline: none;
   margin-right: 15px;
   margin-left: 15px;
+  border: 2px solid white;
 }
 
-.editor.shrinked {
+.editor__container.shrinked {
+  width: 10vw;
+  margin: 0 50px;
+}
+
+.editor__container.shrinked .editor {
   width: 10vw;
 }
 

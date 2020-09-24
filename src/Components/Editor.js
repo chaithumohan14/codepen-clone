@@ -27,33 +27,11 @@ function Editor() {
     return () => clearInterval(set);
   }, [store]);
 
-  const handleChange = (e) => {
-    switch (e.target.id) {
-      case "html":
-        dispatch({
-          type: "html",
-          html: e.target.value,
-        });
-        break;
-
-      case "css":
-        dispatch({
-          type: "css",
-          css: e.target.value,
-        });
-        break;
-
-      case "js":
-        dispatch({
-          type: "js",
-          js: e.target.value,
-        });
-        break;
-
-      default:
-        console.log("Hello");
-        break;
-    }
+  const handleChange = (id, value) => {
+    dispatch({
+      type: id,
+      term: value,
+    });
   };
 
   return (
@@ -62,19 +40,19 @@ function Editor() {
         <EditorComponent
           id="html"
           title="HTML"
-          onChange={(e) => handleChange(e)}
+          onChange={handleChange}
           value={store.html}
         />
         <EditorComponent
           id="css"
           title="CSS"
-          onChange={(e) => handleChange(e)}
+          onChange={handleChange}
           value={store.css}
         />
         <EditorComponent
-          id="js"
+          id="javascript"
           title="JS"
-          onChange={(e) => handleChange(e)}
+          onChange={handleChange}
           value={store.js}
         />
       </div>

@@ -1,30 +1,39 @@
 export const initState = {
-  html: localStorage.getItem("html") || "",
-  css: localStorage.getItem("css") || "",
-  js: localStorage.getItem("js") || "",
+  html:
+    localStorage.getItem("html") === "undefined"
+      ? ""
+      : localStorage.getItem("html"),
+  css:
+    localStorage.getItem("css") === "undefined"
+      ? ""
+      : localStorage.getItem("css"),
+  js:
+    localStorage.getItem("js") === "undefined"
+      ? ""
+      : localStorage.getItem("js"),
 };
 
 export const reducer = (state, action) => {
   switch (action.type) {
     case "html":
-      localStorage.setItem("html", action.html);
+      localStorage.setItem("html", action.term);
       return {
         ...state,
-        html: action.html,
+        html: action.term,
       };
 
     case "css":
-      localStorage.setItem("css", action.css);
+      localStorage.setItem("css", action.term);
       return {
         ...state,
-        css: action.css,
+        css: action.term,
       };
 
-    case "js":
-      localStorage.setItem("js", action.js);
+    case "javascript":
+      localStorage.setItem("js", action.term);
       return {
         ...state,
-        js: action.js,
+        js: action.term,
       };
 
     default:

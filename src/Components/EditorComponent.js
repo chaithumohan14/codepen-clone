@@ -1,33 +1,49 @@
 import React from "react";
+import "codemirror/lib/codemirror.css";
+import "codemirror/theme/material-darker.css";
 import Close from "../Assets/resize-arrows-svgrepo-com.svg";
+import "codemirror/mode/xml/xml";
+import "codemirror/mode/css/css";
+import "codemirror/mode/javascript/javascript";
+import { Controlled as ControlledEditor } from "react-codemirror2";
 
 function EditorComponent({ title, id, onChange, value }) {
+  const modes = { html: "xml", css: "css", javascript: "javascript" };
+  const options = {
+    mode: modes[id],
+    theme: "material-darker",
+    lineNumbers: true,
+    smartIndent: true,
+  };
   const resize = (e) => {
     var editor = document.getElementById(id);
     editor.classList.toggle("shrinked");
   };
   return (
-    <div className="editor__container">
-      <div className="title">
-        <p className="editor__title">{title}</p>
-        <img
-          src={Close}
-          className="closeButton"
-          height="30px"
-          width="30px"
-          alt=""
-          srcSet=""
-          onClick={(e) => resize(e)}
+    <React.Fragment>
+      <div id={id} className="editor__container">
+        <div className="title">
+          <p className="editor__title">{title}</p>
+          <img
+            src={Close}
+            className="closeButton"
+            height="30px"
+            width="30px"
+            alt=""
+            srcSet=""
+            onClick={(e) => resize(e)}
+          />
+        </div>
+        <ControlledEditor
+          className="editor"
+          options={options}
+          value={value}
+          onBeforeChange={(editor, data, value) => {
+            onChange(id, value);
+          }}
         />
       </div>
-      <textarea
-        spellCheck="false"
-        className="editor"
-        onChange={onChange}
-        id={id}
-        value={value}
-      ></textarea>
-    </div>
+    </React.Fragment>
   );
 }
 
