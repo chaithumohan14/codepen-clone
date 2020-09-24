@@ -108,7 +108,7 @@ iframe {
   .editor__container {
     width: 80vw;
     margin-left: -15px;
-    margin-top: 50px;
+    margin-bottom: 50px;
   }
 
   .editors .editor {
