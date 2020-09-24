@@ -46,7 +46,7 @@ iframe {
   margin-right: 15px;
   margin-left: 15px;
   border: 2px solid white;
-  /* overflow: hidden; */
+  margin-top: 100px;
 }
 
 .editor__container.shrinked {
