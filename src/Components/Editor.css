@@ -49,6 +49,10 @@ iframe {
   border: 2px solid white;
 }
 
+.CodeMirror {
+  font-family: "Fira Code", sans-serif;
+}
+
 .editor__container.shrinked {
   width: 10vw;
   margin-left: 0;
