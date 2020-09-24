@@ -14,6 +14,7 @@ function EditorComponent({ title, id, onChange, value }) {
     theme: "material-darker",
     lineNumbers: true,
     smartIndent: true,
+    scrollbarStyle: "null",
   };
   const resize = (e) => {
     var editor = document.getElementById(id);
