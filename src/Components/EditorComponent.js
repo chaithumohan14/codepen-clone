@@ -5,6 +5,10 @@ import Close from "../Assets/resize-arrows-svgrepo-com.svg";
 import "codemirror/mode/xml/xml";
 import "codemirror/mode/css/css";
 import "codemirror/mode/javascript/javascript";
+import "codemirror/addon/edit/closebrackets";
+import "codemirror/addon/edit/closetag";
+import "codemirror/addon/edit/matchbrackets";
+import "codemirror/addon/edit/matchtags";
 import { Controlled as ControlledEditor } from "react-codemirror2";
 
 function EditorComponent({ title, id, onChange, value }) {
@@ -16,6 +20,9 @@ function EditorComponent({ title, id, onChange, value }) {
     smartIndent: true,
     scrollbarStyle: "null",
     lineWrapping: true,
+    autoCloseTags: true,
+    autoCloseBrackets: true,
+    matchBrackets: true,
   };
   const resize = (e) => {
     var editor = document.getElementById(id);
