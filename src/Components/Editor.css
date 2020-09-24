@@ -50,7 +50,8 @@ iframe {
 
 .editor__container.shrinked {
   width: 10vw;
-  margin: 0 50px;
+  margin-left: 0;
+  margin-right: 50px;
 }
 
 .editor__container.shrinked .editor {
