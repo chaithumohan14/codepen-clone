@@ -12,6 +12,10 @@ iframe {
   width: 100%;
 }
 
+.editors {
+  height: auto;
+}
+
 .editor__container {
   display: flex;
   flex-direction: column;
