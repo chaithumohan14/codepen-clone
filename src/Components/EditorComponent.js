@@ -15,6 +15,7 @@ function EditorComponent({ title, id, onChange, value }) {
     lineNumbers: true,
     smartIndent: true,
     scrollbarStyle: "null",
+    lineWrapping: true,
   };
   const resize = (e) => {
     var editor = document.getElementById(id);
